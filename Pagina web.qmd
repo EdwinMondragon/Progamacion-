@@ -88,5 +88,37 @@ ggplot(data = fb, aes(x = geno, y = lfa, fill = riego)) +
 
 ```
 
-`
+# Comparación de medias
+```{r}
+library(agricolae)
+
+# Análisis de varianza del modelo
+anova(modelo)
+
+# Realizar la prueba de Tukey
+tukey_result <- HSD.test(modelo, tr = c("geno", "riego"), group = TRUE)
+
+# Mostrar resultados
+print(tukey_result)
+plot(tukey_result)
+
+# Manipular los resultados para separar 'geno' y 'riego'
+grupos <- tukey_result$groups %>%
+  rownames_to_column("tratamientos") %>%
+  separate(tratamientos, into = c("geno", "riego"), sep = ":")
+
+str(grupos)
+
+```
+
+```{r}
+ggplot(grupos, aes(x = geno, y = lfa, fill = riego)) +
+  geom_bar(stat = "identity", position = position_dodge()) +
+  labs(title = "Efecto de Geno y Riego en LFA",
+       x = "Genotipo",
+       y = "LFA") +
+  theme_minimal() +
+  scale_fill_discrete(name = "Riego") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
 
