@@ -88,7 +88,7 @@ ggplot(data = fb, aes(x = geno, y = lfa, fill = riego)) +
 
 ```
 
-# Comparación de medias
+# Agricolae: comparación de medias
 ```{r}
 library(agricolae)
 
@@ -121,4 +121,67 @@ ggplot(grupos, aes(x = geno, y = lfa, fill = riego)) +
   scale_fill_discrete(name = "Riego") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
+
+```{r}
+ggplot(grupos, aes(x = geno, y = lfa, fill = riego)) +
+  geom_bar(stat = "identity", position = position_dodge()) +
+  geom_text(aes(label = groups),  # Mostrar 'groups' como etiqueta
+            position = position_dodge(width = 0.9), 
+            vjust = -0.3) +  # Ajusta la posición vertical de las etiquetas
+  labs(title = "Efecto de Geno y Riego en LFA",
+       x = "Genotipo",
+       y = "LFA") +
+  theme_minimal() +
+  scale_fill_discrete(name = "Riego") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+
+```
+
+# emmeans: comparación de medias
+
+```{r}
+# Comparacion de medias con: emmeans 
+## Modelo mixto de hi
+source('https://inkaverse.com/setup.r')
+library(emmeans)
+library(multcomp)
+library(multcompView)
+
+modelo <- lme4::lmer(lfa ~ riego * geno + (1 | bloque), data = fb)
+
+anova(modelo)
+
+cm1 <- emmeans(modelo , ~  geno | riego) %>% 
+  cld(Letters = letters, reversed = T )
+cm1
+
+cm2 <- emmeans(modelo , ~  riego | geno) %>% 
+  cld(Letters = letters, reversed = T )
+cm2
+
+cm3 <- emmeans(modelo , ~  riego * geno)%>% 
+  cld(Letters = letters, reversed = T )
+cm3
+
+
+
+### Grafica 
+library(ggplot2)
+dtcm <- as.data.frame(cm1) %>% 
+  rename(sig = ".group")
+
+ggplot(dtcm, aes(x = geno, y = emmean, fill = riego)) +
+  geom_bar(stat = "identity", position = "dodge", color =
+             "black") +
+  geom_text(aes(label = sig, y = emmean),
+            position = position_dodge(width = 0.9),
+            vjust = 0) +
+  labs(x = "Genotipo", y = "HI", fill = "Riego") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  ggtitle("Gráfico de barras: HI por genotipo y riego")
+
+```
+
 
