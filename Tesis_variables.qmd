@@ -1,0 +1,399 @@
+---
+title: "EFICIENCIA DE USO DE AGUA EN QUINCE GENOTIPOS DE PAPA (*Solanum tuberosum* L.) BAJO CONDICIONES DE ESTRÉS HÍDRICO POR SEQUÍA"
+author: "FLAVIO LOZANO ISLA"
+format:
+  html:
+    toc: true
+    toc-location: left
+    number-sections: true
+    embed-resources: true
+    output-file: index
+header-includes:
+  - |
+    <style>
+      h1.title {
+        text-align: justify;
+        color: orange;
+      }
+    </style>
+---
+<div style="text-align: center; font-weight: bold; margin-top: 50px;">
+    Lima – Perú
+</div>
+<div style="text-align: center; margin-top: 10px;">
+    2015
+</div>
+
+# <span style="color: orange;">Resumen </span>
+<div style="text-align: justify;">
+La papa (*Solanum tuberosum* L.) es un cultivo sensible a la sequía debido a que posee un sistema radicular poco profundo y requiere disponibilidad constante de agua en el suelo para asegurar su máximo rendimiento y calidad en el tubérculo. La eficiencia de uso de agua (EUA) se define como la producción por unidad de agua consumida, esta variable es considerada importante para determinar el rendimiento bajo condiciones limitadas de agua. Si logramos entender la relación entre EUA y el rendimiento bajo condiciones de estrés puede ayudarnos a encontrar estrategias que nos ayuden a minimizar la perdida de rendimiento debido a la disponibilidad de agua y asegurar una alta producción. Se llevó acabo un experimento en invernadero con condiciones controladas , para caracterizar la respuesta y entender la relación entre la EUA, el rendimiento y la tolerancia en 15 genotipos de papa de la población avanzada de mejoramiento del Centro Internacional de la Papa (CIP). El experimento fue llevado acabo baja el diseño experimental de parcelas divididas teniendo como factor principal dos tipos de riego, sequía regulada y riego normal y como factor secundario los quince genotipos. A través del experimento se evaluaron variables morfológicas y fisiológicas tales como contenido relativo de clorofila (SPAD), contenido relativo de agua (CRA), Potencial Osmótico (PO), Área foliar (AF), transpiración y parámetros de rendimiento tales como el peso de la biomasa, Índice de Cosecha (IC) e Índice de tolerancia a la reducción de agua (TRA). Los resultados de la investigación muestran diferencias significativas entre tratamientos, y en general las plantas sometidas a limitaciones de agua muestran un rendimiento menor, existiendo una reducción en la biomasa y el área foliar. Existe una correlación alta entra la EUA y el IC (r = 0.98), indicando que este último puede ser una herramienta útil para la selección prematura de genotipos con buen rendimiento y tolerante al estrés por sequía. Los genotipos, CIP398190.89, CIP397077.16, CIP392797.22, CIP398208.620 mostraron una mayor eficiencia en el uso de agua bajo condiciones de sequía sin que esto produzca una reducción drástica en su rendimiento.
+</div>
+
+<p class="palabras-clave"><strong>Palabras clave:</strong> Solanum tuberosum; Genotipos; Riego; Estrés de sequía; Relaciones planta agua; Fisiología vegetal; Respuesta de la planta; Rendimiento de cultivos; Evaluación; Perú.</p>
+
+<p class="uri"><strong>URI:</strong> <a href="https://repositorio.lamolina.edu.pe/server/api/core/bitstreams/41db53c8-ad2a-4bb3-8d7b-ef936af5c99f/content">https://repositorio.lamolina.edu.pe/server/api/core/bitstreams/41db53c8-ad2a-4bb3-8d7b-ef936af5c99f/content</a></p>
+
+# <span style="color: orange;">Materiales y Métodos</span>
+ <span style="color: orange;">Material biológico </span>
+<div style="text-align: justify;">
+Se utilizaron quince (15) genotipos de papa provenientes de poblaciones de mejoramiento
+del Centro Internacional de la Papa. Los cuales fueron evaluados y seleccionados por sus buenas
+características agronómicas y bromatológicas. Dentro del grupo de genotipos empleados se
+usaron 2 variedades de papa (UNICA y Achirana) que fueron evaluados bajo condiciones de
+sequía en experimentos anteriores por lo que se tiene conocimiento de su tolerancia al estrés por
+sequía. Los genotipos presentan distintas características en su precocidad y madurez fisiológica
+</div>
+<table border="1" style="width:100%; border-collapse: collapse; text-align: center;">
+    <caption><strong>Figura 1:</strong> <em>Información agronómica de los genotipos cuyos datos son visibles en el documento y fueron evaluados</em></caption>
+    <thead style="background-color: #cccccc;">
+        <tr>
+            <th style="border: 1px solid black;">Genotipos</th>
+            <th style="border: 1px solid black;">Adaptabilidad</th>
+            <th style="border: 1px solid black;">Tolerante a Calor</th>
+            <th style="border: 1px solid black;">Precocidad</th>
+            <th style="border: 1px solid black;">Rendimiento (kg/planta)</th>
+            <th style="border: 1px solid black;">Materia Seca (%)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="border: 1px solid black;">CIP393077.16</td>
+            <td style="border: 1px solid black;">Tierras bajas tropicales</td>
+            <td style="border: 1px solid black;"></td>
+            <td style="border: 1px solid black;">Medio</td>
+            <td style="border: 1px solid black;">0.81</td>
+            <td style="border: 1px solid black;">20</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid black;">CIP393180.612</td>
+            <td style="border: 1px solid black;">Trópico de mediana elevación</td>
+            <td style="border: 1px solid black;"></td>
+            <td style="border: 1px solid black;">Medio</td>
+            <td style="border: 1px solid black;">1.16</td>
+            <td style="border: 1px solid black;">20</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid black;">CIP398192.213</td>
+            <td style="border: 1px solid black;">Trópico de mediana elevación</td>
+            <td style="border: 1px solid black;">Tolerante</td>
+            <td style="border: 1px solid black;">Medio</td>
+            <td style="border: 1px solid black;">0.71</td>
+            <td style="border: 1px solid black;">22</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid black;">CIP398201.510</td>
+            <td style="border: 1px solid black;">Trópico de mediana elevación</td>
+            <td style="border: 1px solid black;">Tolerante</td>
+            <td style="border: 1px solid black;">Medio</td>
+            <td style="border: 1px solid black;">1.16</td>
+            <td style="border: 1px solid black;">20</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid black;">CIP398205.5</td>
+            <td style="border: 1px solid black;">Trópico de mediana elevación</td>
+            <td style="border: 1px solid black;">Tolerante</td>
+            <td style="border: 1px solid black;">Medio</td>
+            <td style="border: 1px solid black;">0.84</td>
+            <td style="border: 1px solid black;">13</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid black;">CIP396208.93</td>
+            <td style="border: 1px solid black;">Trópico de mediana elevación</td>
+            <td style="border: 1px solid black;">Tolerante</td>
+            <td style="border: 1px solid black;">Medio</td>
+            <td style="border: 1px solid black;">0.81</td>
+            <td style="border: 1px solid black;">21</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid black;">CIP398208.704</td>
+            <td style="border: 1px solid black;">Trópico de mediana elevación</td>
+            <td style="border: 1px solid black;">Tolerante</td>
+            <td style="border: 1px solid black;">Medio</td>
+            <td style="border: 1px solid black;">0.75</td>
+            <td style="border: 1px solid black;">24</td>
+        </tr>
+    </tbody>
+</table>
+<span style="color: orange;">Diseño y análisis estadístico </span>
+<div style="text-align: justify;">
+El diseño experimental utilizado fue de Parcelas Divididas, lo cual es adecuado para la
+características de la evaluación (Montgomery, 1999). La unidad experimental fue de una planta
+y/o maceta. Los factores por analizar fueron dos: los genotipos de papa y los tipos de riego. El
+factor genotipos constó de 13 clones avanzado y 2 variedades de papa (UNICA y Achirana) .
+El factor de tipo de riego tuvo dos tratamientos: riego normal y sequía controlada. Las unidades
+experimentales fueron cinco por tratamiento las que fueron distribuidas al azar (Fig. 2).
+</div>
+
+```{r, echo=FALSE, results='asis', out.width="90%"}
+library(htmltools)
+knitr::include_graphics("C:/Users/altoque-2024/Desktop/123456789.jpeg")
+cat(HTML("<p style='text-align:center;'><strong>Figura 2:</strong> <em>Distribución espacial del experimento con el diseño de parcelas divididas dentro del invernadero</em></p>"))
+
+```
+# <span style="color: orange;">Análisis de Datos</span>
+<span style="color: orange;">Descripción de las variables del experiemento</span>
+<div style="text-align: justify;">
+**riego** : Tipo de tratamiento de riego aplicado, que puede ser sequía o irrigado. Representa las condiciones de riego bajo las que fueron cultivadas las plantas.
+
+**geno** : Genotipo de la planta ( G01, G02, G03, etc.). Indica la variedad genética de las plantas de papa.
+
+**block** : Número del bloque dentro del diseño experimental. Suele utilizarse para representar bloques en un diseño experimental aleatorio para minimizar los efectos de la variabilidad.
+
+**bloque** : Repetición del bloque en un formato diferente ( I, II, III, etc.). probablemente un identificador textual complementario.
+
+**spad_29** : Medición del índice SPAD en el día 29. El índice SPAD está relacionado con el contenido de clorofila de las hojas y, por lo tanto, con la salud de la planta.
+
+**spad_83** : Medición del índice SPAD en el día 83. Indica el contenido de clorofila en un punto más avanzado del crecimiento.
+
+**rwc_84** : Relative Water Content (Contenido Relativo de Agua) medido en el día 84. Es una medida de la hidratación de las hojas, utilizada para evaluar el estado hídrico de las plantas.
+
+**op_84** : Potencial osmótico medido en el día 84. Mide la presión osmótica del agua en las células de la planta, indicando la capacidad de la planta para absorber agua.
+
+**leafdw** : Peso seco de la hoja. Indica el peso de las hojas tras secarlas, lo cual permite medir el crecimiento vegetal sin el peso del agua.
+
+**stemdw** : Peso seco del tallo. Similar a leafdw, mide el peso del tallo después de secarlo.
+
+**rootdw** : Peso seco de la raíz. Es el peso de las raíces una vez secas.
+
+**tubdw** : Peso seco de los tubérculos. Indica el peso de los tubérculos de papá después de secarlos.
+
+**biomdw** : Biomasa total en peso seco. Representa la suma del peso seco de hojas, tallos, raíces y tubérculos.
+
+**hola** : Índice de cosecha . Es el cociente entre el peso seco de los tubérculos y la biomasa total. Indica la eficiencia con la cual la planta destina sus recursos a producir partes cosechables.
+
+**ttrans** : Transpiración total . Es una medida del total de agua transpirada por la planta.
+
+**wue** : Eficiencia en el uso del agua . Es un índice que mide la cantidad de biomasa producida por unidad de agua consumida.
+
+**twue** : Eficiencia transpiratoria . Similar a wue, pero se centra en la eficiencia en la transpiración.
+
+**lfa** : Área foliar . Mide el área total de las hojas de la planta, lo cual es un indicador de la capacidad fotosintética de la planta. 
+</div>
+<span style="color: orange;">Variables analizadas en esta presentación</span>
+<div style="text-align: justify;">
+En esta presentación analizaremos las variables (**ttrans**) y (**wue**):
+
+**stemdw** : Peso seco del tallo. Similar a leafdw, mide el peso del tallo después de secarlo.
+
+**wue** : Eficiencia en el uso del agua . Es un índice que mide la cantidad de biomasa producida por unidad de agua consumida.
+
+</div>
+<span style="color: orange;">ANOVA de los datos</span>
+<div style="text-align: justify;">
+ANOVA de la data y su interpretación.
+</div>
+
+```{r, echo=FALSE, results='asis'}
+# Cargar librerías necesarias
+suppressPackageStartupMessages(library(dplyr))  # Ocultar mensajes al cargar el paquete
+suppressPackageStartupMessages(library(knitr))  # Ocultar mensajes al cargar el paquete
+
+# Crear un dataframe con los resultados del ANOVA
+anova_table <- data.frame(
+  Fuente = c("block", "geno", "riego", "geno:riego", "Residuals"),
+  Df = c(4, 14, 1, 14, 116),
+  Sum_Sq = c(1788.7, 20528.6, 9754.4, 2139.7, 10239.8),
+  Mean_Sq = c(447.2, 1466.3, 9754.4, 152.8, 88.3),
+  F_value = c(5.07, 16.61, 110.50, 1.73, NA),
+  Pr_F = c(0.0008473, "< 2.2e-16", "< 2.2e-16", 0.0583, NA)
+)
+
+# Mostrar la tabla en la consola sin encabezado ni leyenda adicional
+print(kable(anova_table, 
+            col.names = c("Fuente", "Grados de Libertad (Df)", "Suma de Cuadrados (Sum Sq)", 
+                          "Media Cuadrática (Mean Sq)", "Valor F (F value)", "Valor p (Pr(>F))")))
+
+```
+<caption><strong>Figura 3:</strong> <em>ANOVA de datos</em></caption>
+
+
+
+
+<span style="color: orange;">Interpretación </span>
+
+<div style="text-align: justify;">
+**Códigos de significancia:**
+
+*** p < 0.001
+
+** p < 0.01
+
+* p < 0.05
+
+. p < 0.1
+
+  p > 0.1
+
+**Interpretación de los Resultados para tubdw (Peso Seco de los Tubérculos)**
+
+**block:** La variable block tiene un efecto significativo en tubdw, con un valor p de 0.0008473. Esto indica que la variabilidad entre los bloques contribuye significativamente al peso seco de los tubérculos, lo cual es importante para controlar efectos no deseados dentro del diseño experimental.
+
+**geno (Genotipo)**: La variable geno tiene un valor p extremadamente pequeño (< 2.2e-16), lo que indica diferencias significativas entre los genotipos respecto a tubdw. Esto sugiere que ciertos genotipos son más eficientes en producir tubérculos secos.
+
+**riego:** El tratamiento de riego tiene un impacto muy significativo sobre tubdw, con un valor p de < 2.2e-16. Esto sugiere que el riego es un factor crítico para el rendimiento de los tubérculos.
+
+**Interacción geno:riego:** La interacción entre geno y riego es marginalmente significativa (α = 0.1), con un valor p de 0.0583. Esto implica que el efecto del riego puede variar ligeramente según el genotipo.
+
+**Residuals:** La variabilidad que no puede ser explicada por el modelo se refleja en los residuos, con una media cuadrática de 88.3.
+
+**Interpretación General del ANOVA para Otras Variables**
+
+**1. leafdw (Peso Seco de la Hoja)**
+
+**block:** El efecto de block en el peso seco de las hojas refleja la variabilidad que puede deberse a condiciones particulares de cada bloque experimental. Un valor p significativo indicaría que los bloques afectan leafdw de manera importante.
+
+**geno:** Los diferentes genotipos pueden mostrar variabilidad significativa en leafdw, lo cual indicaría que algunos genotipos tienen mayor área foliar seca que otros, reflejando diferencias en el crecimiento vegetativo.
+
+**riego:** El riego influye directamente en la cantidad de masa foliar que la planta puede producir, por lo que un valor p significativo sugeriría que la hidratación afecta fuertemente el crecimiento de las hojas.
+
+**Interacción geno:riego:** La interacción puede indicar si ciertos genotipos responden de manera diferencial al riego en términos de la producción de hojas secas.
+
+**2. stemdw (Peso Seco del Tallo)**
+
+**block:** Un valor p significativo para block sugiere que las condiciones del bloque afectan el desarrollo del tallo.
+
+**geno:** Diferentes genotipos pueden tener variabilidad significativa en el desarrollo del tallo, reflejando diferencias en la estructura y la resistencia de las plantas.
+
+**riego:** Un valor p significativo indicaría que el riego influye en el desarrollo del tallo, lo cual es crucial para el soporte de la planta.
+
+**Interacción geno:riego:** La interacción significativa sugeriría que el riego tiene diferentes efectos sobre el tallo según el genotipo.
+
+**3. rootdw (Peso Seco de la Raíz)**
+
+**block:** Un valor significativo indicaría que la localización dentro de los bloques afecta el desarrollo radicular.
+
+**geno:** Diferencias significativas entre los genotipos en rootdw reflejarían la capacidad de algunos genotipos para desarrollar un sistema radicular más fuerte.
+
+**riego:** El riego influye en el desarrollo de la raíz, por lo que un valor p significativo indica que el suministro de agua es un factor determinante.
+
+**Interacción geno:riego:** Un valor significativo para la interacción podría indicar que algunos genotipos son más eficientes en desarrollar raíces bajo diferentes condiciones de riego.
+
+**4. biomdw (Biomasa Total en Peso Seco)**
+
+**block:** Un valor significativo indicaría que las condiciones experimentales en diferentes bloques afectan la biomasa total.
+
+**geno:** Diferencias significativas entre los genotipos indicarían que algunos producen más biomasa que otros, lo cual es crucial para la selección de genotipos con mejor rendimiento.
+
+**riego:** El riego es fundamental para la producción de biomasa total, por lo que un valor significativo indicaría su importancia en el rendimiento global.
+
+**Interacción geno:riego:** Una interacción significativa sugeriría que el rendimiento de biomasa depende tanto del genotipo como del régimen de riego.
+
+**5. wue (Eficiencia en el Uso del Agua)**
+
+**block:** Un valor p significativo para block sugiere que la eficiencia del uso del agua varía según las condiciones de cada bloque.
+
+**geno:** Los diferentes genotipos pueden tener eficiencia variable en el uso del agua, lo cual es importante para seleccionar variedades que maximicen la producción con menos recursos hídricos.
+
+**riego:** Un valor significativo indicaría que la cantidad de agua suministrada afecta la eficiencia de las plantas al utilizarla para producir biomasa.
+
+**Interacción geno:riego:** Un valor significativo para la interacción indicaría que ciertos genotipos responden de manera diferente al riego en cuanto a su eficiencia del uso del agua.
+
+**6. spad_29 y spad_83 (Mediciones del Índice SPAD)**
+
+**block:** Un valor significativo en block sugiere que las condiciones de cada bloque influyen en el contenido de clorofila, posiblemente debido a variaciones en nutrientes o luz.
+
+**geno:** Diferencias significativas entre genotipos indicarían variabilidad en el contenido de clorofila, lo cual puede estar relacionado con la capacidad fotosintética.
+
+**riego:** Un valor significativo para el riego indicaría que la disponibilidad de agua afecta el contenido de clorofila.
+
+**Interacción geno:riego:** Podría indicar si la respuesta en el contenido de clorofila varía dependiendo del genotipo y del régimen de riego.
+
+**Conclusiones Generales**
+
+Cada variable de respuesta tiene una interpretación específica dependiendo de los factores (block, geno, riego, y sus interacciones) y su impacto sobre diferentes aspectos del crecimiento y desarrollo de las plantas de papa.
+
+Los resultados sugieren que la selección de genotipos y el manejo del riego son fundamentales para mejorar diferentes componentes del rendimiento de la planta, como la biomasa total, el peso de los tubérculos, la eficiencia en el uso del agua, y el desarrollo de las hojas y tallos.
+
+La interacción geno:riego puede tener un efecto significativo en algunas variables, lo cual indica la importancia de adaptar las prácticas de riego a las necesidades específicas de cada genotipo.
+</div>
+<span style="color: orange;">Análisis de datos de la variable tubdw</span>
+<div style="text-align: justify;">
+El diagrama de cajas (**Figura 4**) muestra la variación en el peso seco de los tubérculos (tubdw) para diferentes genotipos de papa (G01 a G15), bajo dos tratamientos de riego: irrigado (en rojo) y sequía (en azul). Cada caja representa la distribución de tubdw dentro de cada combinación de genotipo y tratamiento de riego, incluyendo la mediana, los cuartiles y los valores atípicos.
+
+El gráfico permite observar cómo algunos genotipos, como G05 y G15, presentan mayores valores medios de tubdw cuando se les aplica riego, sugiriendo que responden mejor al tratamiento irrigado. Otros genotipos, como G06 y G13, tienen valores relativamente similares entre irrigado y sequía, lo que podría indicar una mayor tolerancia a la sequía.
+
+Este análisis comparativo facilita la identificación de los genotipos con mayor rendimiento y su respuesta a los distintos regímenes de riego, ayudando a los investigadores a seleccionar aquellos con mejores características para condiciones específicas.
+</div>
+```{r, echo=FALSE, results='asis', out.width="90%"}
+library(htmltools)
+knitr::include_graphics("C:/Users/altoque-2024/Desktop/tubdw.jpeg")
+cat(HTML("<p style='text-align:center;'><strong>Figura 4:</strong> <em>Diagrama de cajas del efectto de geno y riego en tubdw</em></p>"))
+```
+<span style="color: orange;">Comparación de Medias: Efecto del Riego y Genotipo en el Peso Seco de los Tubérculos de Papa</span>
+
+<div style="text-align: justify;">
+El gráfico (**Figura 5**) presenta la comparación de medias del peso seco de los tubérculos (tubdw) para distintos tratamientos de riego (irrigado y sequía) y genotipos (G15, G08, G07, etc.) de papa. Los grupos se identifican mediante letras, indicando que los tratamientos que comparten la misma letra no tienen diferencias significativas en su rendimiento, según la prueba de Tukey. Los resultados muestran que los genotipos G15 y G08 bajo condiciones de riego presentan las medias más altas de peso seco, destacando la influencia del riego sobre el rendimiento de estos genotipos. Este análisis permite identificar qué combinaciones de genotipo y tratamiento de riego son más productivas.
+</div>
+```{r, echo=FALSE, results='asis', out.width="90%"}
+library(htmltools)
+knitr::include_graphics("C:/Users/altoque-2024/Desktop/grupos.jpeg")
+cat(HTML("<p style='text-align:center;'><strong>Figura 5:</strong> <em>Comparación de medias del efecto del riego y genotipo en el peso seco de los tubérculos de papa. Los grupos identificados con la misma letra no presentan diferencias significativas (prueba de Tukey, p < 0.05).</em></p>"))
+```
+<span style="color: orange;">Comparación de Medias del Peso Seco de Tubérculos (tubdw) por Genotipo y Tratamiento de Riego</span>
+
+<div style="text-align: justify;">
+El gráfico de barras (**Figura 6**) muestra el peso seco de los tubérculos (tubdw) para diferentes genotipos de papa (G01 a G15), bajo dos condiciones de riego: irrigado y sequía. Cada barra representa la media ajustada del peso seco para cada combinación de genotipo y riego.
+
+Las letras sobre las barras indican los grupos homogéneos identificados mediante la prueba de Tukey, lo que permite ver qué tratamientos no presentan diferencias significativas entre sí. Las barras en rojo (irrigado) tienden a mostrar valores mayores que las barras en azul (sequía), lo cual resalta el impacto positivo del riego en la producción de tubérculos. Los genotipos G08 y G15 bajo irrigado muestran los valores más altos de tubdw, lo que sugiere una alta respuesta de estos genotipos a la disponibilidad de agua.
+</div>
+```{r, echo=FALSE, results='asis', out.width="90%"}
+library(htmltools)
+knitr::include_graphics("C:/Users/altoque-2024/Desktop/mixto.png")
+cat(HTML("<p style='text-align:center;'><strong>Figura 6:</strong> <em>Comparación de medias ajustadas del peso seco de tubérculos (tubdw) para distintos genotipos de papa bajo tratamientos de riego (irrigado y sequía). Las letras indican los grupos que no presentan diferencias significativas según la prueba de Tukey (p < 0.05).</em></p>"))
+```
+<span style="color: orange;">Análisis de datos de la variable wue</span>
+<div style="text-align: justify;">
+El diagrama de cajas muestra la Eficiencia en el Uso del Agua (wue) para distintos genotipos de papa bajo tratamientos de riego (irrigado y sequía). Se observa que, en la mayoría de los genotipos, los valores de wue son similares entre ambos tratamientos, lo que sugiere que la eficiencia en el uso del agua no se ve significativamente afectada por la disponibilidad de riego en la mayoría de los casos. Sin embargo, algunos genotipos como G06 bajo sequía presentan valores más altos, indicando una mayor capacidad de uso eficiente del agua bajo condiciones limitadas.
+</div>
+```{r, echo=FALSE, results='asis', out.width="90%"}
+library(htmltools)
+knitr::include_graphics("C:/Users/altoque-2024/Desktop/wue.png")
+cat(HTML("<p style='text-align:center;'><strong>Figura 7:</strong> <em>Eficiencia en el Uso del Agua (wue) para diferentes genotipos de papa bajo tratamientos de riego (irrigado y sequía). Los resultados sugieren que algunos genotipos muestran mayor eficiencia bajo condiciones de sequía.</em></p>"))
+```
+<span style="color: orange;">Comparación de Medias de la Eficiencia en el Uso del Agua ( wue) por Tratamiento de Genotipo y Riego</span>
+<div style="text-align: justify;">
+La imagen (**Figura 8**) presenta los resultados de la prueba de Tukey aplicada a la eficiencia en el uso del agua ( wue) para diferentes genotipos de papa ( G05, G07, G09, etc.) bajo dos condiciones de riego ( irrigadoy sequía). Cada punto en el gráfico muestra el valor promedio ajustado de wuepara cada combinación de genotipoy riego.
+
+Las letras sobre cada punto indican los grupos homogéneos identificados por la prueba de Tukey, lo cual permite observar qué combinaciones no presentan diferencias significativas entre sí. El genotipo G05 bajo sequía destaca con el valor más alto de wue, ubicado en un grupo distinto al de los demás, lo cual sugiere una mayor eficiencia en el uso del agua bajo condiciones de restricción hídrica. Los tratamientos restantes presentan valores más homogéneos, con la mayoría perteneciendo a grupos similares.
+</div>
+```{r, echo=FALSE, results='asis', out.width="90%"}
+library(htmltools)
+knitr::include_graphics("C:/Users/altoque-2024/Desktop/wue1.jpeg")
+cat(HTML("<p style='text-align:center;'><strong>Figura 8:</strong> <em>Eficiencia en el Uso del Agua (wue) para diferentes genotipos de papa bajo tratamientos de riego (irrigado y sequía). Los resultados sugieren que algunos genotipos muestran mayor eficiencia bajo condiciones de sequía.</em></p>"))
+```
+<span style="color: orange;">Eficiencia en el Uso del Agua ( wue) por Genotipo de Papa y Tratamiento de Riego</span>
+<div style="text-align: justify;">
+El gráfico de barras (**Figura 9**) presenta la eficiencia en el uso del agua ( wue) para diferentes genotipos de papa ( G01a G15) bajo dos tratamientos de riego ( irrigadoy sequía). Cada barra muestra los medios ajustados de wuepara cada combinación de genotipoy riego. Las letras sobre las barras indican los grupos homogéneos identificados mediante la prueba de Tukey , lo que significa que los tratamientos con letras iguales no presentan diferencias significativas.
+
+En la mayoría de los genotipos, se observa una tendencia similar en los valores dewue entre los tratamientos de irrigadoy sequía, lo que indica que muchos de los genotipos mantienen una eficiencia en el uso del agua relativamente constante. En algunos casos, como en los genotipos G03 y G10 , el riego sequíaparece tener un efecto positivo sobre la eficiencia, ya que presenta valores más altos de wueen comparación con irrigado.
+</div>
+```{r, echo=FALSE, results='asis', out.width="90%"}
+library(htmltools)
+knitr::include_graphics("C:/Users/altoque-2024/Desktop/wue2.jpeg")
+cat(HTML("<p style='text-align:center;'><strong>Figura 9:</strong> <em>Comparación de la eficiencia en el uso del agua ( wue) para diferentes genotipos de papa bajo tratamientos de riego ( irrigadoy sequía). Las letras indican los grupos homogéneos según la prueba de Tukey (p < 0.05), mostrando qué combinaciones no presentan diferencias significativas.</em></p>"))
+```
+# <span style="color: orange;">Resultados y Discusión para wue y tubdw </span>
+<span style="color: orange;">Resultados para tubdw (Peso Seco de los Tubérculos) </span>
+<div style="text-align: justify;">
+El análisis del peso seco de los tubérculos (tubdw) muestra una clara diferencia en los valores medios entre los diferentes genotipos de papa (G01 a G15) bajo dos tratamientos de riego: irrigado y sequía. En general, los genotipos sometidos a riego irrigado presentan mayores valores de tubdw en comparación con aquellos sometidos a sequía, indicando que la disponibilidad de agua tiene un impacto positivo significativo en el desarrollo de los tubérculos.
+
+Los genotipos G05 y G15 bajo irrigado destacaron con los mayores valores de tubdw, alcanzando más de 75 unidades en promedio. En contraste, algunos genotipos, como G06 y G13, mostraron valores similares entre ambos tratamientos de riego, lo que podría sugerir una mayor tolerancia a la sequía o una menor respuesta a la disponibilidad adicional de agua.
+</div>
+<span style="color: orange;">Resultados para wue (Eficiencia en el Uso del Agua)</span>
+<div style="text-align: justify;">
+El análisis de la eficiencia en el uso del agua (wue) muestra un comportamiento diferente al observado en tubdw. En la mayoría de los genotipos, no se observan diferencias significativas en wue entre los tratamientos de irrigado y sequía, lo que sugiere que la eficiencia en la utilización del agua por parte de las plantas se mantiene relativamente constante bajo condiciones hídricas diferentes.
+
+Los genotipos G05 bajo sequía y G09 bajo sequía presentaron valores más altos de wue en comparación con otros tratamientos, ubicándose en grupos homogéneos diferentes según la prueba de Tukey. Esto indica una mayor eficiencia en el uso del agua en estos genotipos bajo condiciones de sequía, lo cual es una característica deseable para cultivos en áreas con recursos hídricos limitados.
+</div>
+<span style="color: orange;">Discusión General</span>
+<div style="text-align: justify;">
+Los resultados obtenidos indican una respuesta diferencial de los genotipos al tratamiento de riego tanto en términos de tubdw como de wue. En general, el riego irrigado favorece un mayor peso seco de los tubérculos, lo que indica que la disponibilidad de agua es crucial para el desarrollo óptimo de la biomasa cosechable. Sin embargo, la eficiencia en el uso del agua (wue) no siempre aumenta bajo condiciones de riego completo; de hecho, algunos genotipos mostraron una mayor eficiencia bajo sequía, lo cual podría ser clave en la selección de variedades para cultivo en entornos con disponibilidad de agua limitada.
+
+El genotipo G05 se destaca tanto por su alto valor de tubdw bajo irrigado como por su alta eficiencia (wue) bajo sequía, lo cual lo convierte en un candidato ideal para estudios futuros enfocados en mejorar la productividad y sostenibilidad en regiones vulnerables a la sequía. Por otro lado, los genotipos que no muestran diferencias significativas entre irrigado y sequía, como G06 y G13, podrían ser útiles en el desarrollo de variedades resilientes.
+
+En resumen, los resultados sugieren que la disponibilidad de agua tiene un impacto significativo en el rendimiento de los tubérculos, mientras que la eficiencia en el uso del agua depende más de las características genéticas del cultivo que del tipo de tratamiento de riego. Estos hallazgos podrían ser fundamentales para optimizar estrategias de manejo agrícola que maximicen tanto el rendimiento como la eficiencia hídrica, especialmente en regiones con restricciones de agua.
+</div>
+# <span style="color: orange;">Conclusión </span>
+<div style="text-align: justify;">
+En conclusión, el presente estudio demuestra que la disponibilidad de agua tiene un efecto determinante en el rendimiento de los tubérculos, con los genotipos respondiendo de manera diferenciada a las condiciones de riego. Mientras que el riego irrigado favorece un mayor peso seco de los tubérculos (tubdw), algunos genotipos muestran una eficiencia en el uso del agua (wue) notablemente alta bajo condiciones de sequía, lo cual es prometedor para la producción en entornos con limitaciones hídricas. Estos resultados proporcionan información valiosa para la selección de genotipos que combinen altos rendimientos y una buena eficiencia en el uso del agua, contribuyendo así a la sostenibilidad de la producción agrícola en el contexto del cambio climático y la escasez de recursos hídricos.
+</div>

@@ -52,6 +52,7 @@ Esta es una formula cualquiera $$\frac{\left(2x-1\right)^2-1}{4}=k$$
 4.  Activar GitHub pages
 
 # Modelo lineal
+
 ## Importar data
 
 ```{r}
@@ -73,6 +74,7 @@ modelo <- lm(formula = lfa ~ block + geno + riego * geno, data = fb)
 # Análisis de varianza del modelo
 anova(modelo)
 ```
+
 ```{r}
 # Cargar librerías
 library(ggplot2)
@@ -89,6 +91,7 @@ ggplot(data = fb, aes(x = geno, y = lfa, fill = riego)) +
 ```
 
 # Agricolae: comparación de medias
+
 ```{r}
 library(agricolae)
 
@@ -183,5 +186,3 @@ ggplot(dtcm, aes(x = geno, y = emmean, fill = riego)) +
   ggtitle("Gráfico de barras: HI por genotipo y riego")
 
 ```
-
-
