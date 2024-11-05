@@ -42,4 +42,23 @@ p2 <- plot(mv, choix = "var")
 list(p1, p2) %>%
     plot_grid(plotlist = ., nrow = 1)
 ```
+```{r}
+library(FactoMineR)
+library(dplyr)
+library(cowplot)
+
+# Selecciona solo las variables necesarias y calcula el promedio
+mv <- fb %>%
+    group_by(riego, geno) %>%
+    summarise(across(c(tubdw, wue), ~ mean(., na.rm = TRUE))) %>%
+    PCA(scale.unit = TRUE, quali.sup = c(1, 2), graph = FALSE)  # Adaptamos quali.sup a las posiciones de 'riego' y 'geno'
+
+# Graficar el análisis de componentes principales
+p1 <- plot(mv, choix = "ind", habillage = "ind", label = "ind")
+p2 <- plot(mv, choix = "var")
+
+# Combinar las gráficas en una sola fila
+plot_grid(p1, p2, nrow = 1)
+
+```
 
