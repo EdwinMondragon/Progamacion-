@@ -1,0 +1,45 @@
+```{r}
+source('https://inkaverse.com/setup.r')
+
+# Importar datos
+url <- "https://docs.google.com/spreadsheets/d/15r7ZwcZZHbEgltlF6gSFvCTFA-CFzVBWwg3mFlRyKPs/edit#gid=172957346"
+gs <- url %>% as_sheets_id()
+fb <- gs %>%
+  range_read("fb")
+
+# Convertir a data.frame asegurándonos de eliminar atributos de tibble
+fb <- as.data.frame(fb)
+
+# Mostrar la estructura de los datos
+str(fb)
+
+```
+```{r}
+fb %>%
+  select_if(is.numeric) %>%
+  dplyr::select(-c("block")) %>%
+  pairs.panels(
+    hist.col = "red",
+    pch = 21,
+    stars = TRUE,
+    scale = FALSE,
+    lm = TRUE
+  )
+
+```
+```{r}
+library(FactoMineR)
+
+mv <- fb %>%
+    group_by(riego, geno) %>%
+    summarise(across(where(is.numeric), ~ mean(., na.rm = TRUE))) %>%
+    PCA(scale.unit = T, quali.sup = c(1:4), graph = F)
+
+p1 <- plot(mv, choix = "ind", habillage = "ind", label = "ind")
+
+p2 <- plot(mv, choix = "var")
+
+list(p1, p2) %>%
+    plot_grid(plotlist = ., nrow = 1)
+```
+

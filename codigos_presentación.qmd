@@ -1,0 +1,257 @@
+
+```{r, echo=FALSE, results='asis'}
+library(googlesheets4)
+library(tidyverse)
+url <- "https://docs.google.com/spreadsheets/d/15r7ZwcZZHbEgltlF6gSFvCTFA-CFzVBWwg3mFlRyKPs/edit#gid=172957346"
+fb <- range_read(url, sheet = "fb")
+```
+```{r, echo=FALSE, results='asis'}
+modelo <- lm(formula = wue  ~ block + geno + riego * geno, data = fb)
+anova(modelo)
+```
+```{r}
+library(ggplot2)
+ggplot(data = fb, aes(x = geno, y = wue , fill = riego)) +
+  geom_boxplot() +
+  labs(title = "Diagrama de Cajas de wue por geno y riego",
+       x = "Genotipo (geno)",
+       y = "Valor de wue ") +
+  theme_minimal()
+```
+```{r}
+library(ggplot2)
+
+# Crear un diagrama de cajas
+ggplot(data = fb, aes(x = geno, y = wue, fill = riego)) +
+  geom_boxplot() +
+  labs(title = "Diagrama de Cajas de wue por geno y riego",
+       x = "Genotipo (geno)",
+       y = "Valor de wue") +
+  theme_minimal()
+```
+```{r}
+library(agricolae)
+library(dplyr)
+library(tidyr)
+
+# Ajustar el modelo cambiando la variable de respuesta a wue
+modelo <- lm(formula = wue ~ block + geno + riego * geno, data = fb)
+
+# Análisis de varianza del modelo
+anova(modelo)
+
+# Realizar la prueba de Tukey
+tukey_result <- HSD.test(modelo, tr = c("geno", "riego"), group = TRUE)
+
+# Mostrar resultados
+print(tukey_result)
+plot(tukey_result)
+
+# Manipular los resultados para separar 'geno' y 'riego'
+grupos <- tukey_result$groups %>%
+  rownames_to_column("tratamientos") %>%
+  separate(tratamientos, into = c("geno", "riego"), sep = ":")
+
+# Mostrar la estructura del dataframe 'grupos'
+str(grupos)
+```
+```{r}
+library(agricolae)
+library(dplyr)
+library(tidyr)
+
+# Análisis de varianza del modelo
+anova(modelo)
+
+# Realizar la prueba de Tukey
+tukey_result <- HSD.test(modelo, tr = c("geno", "riego"), group = TRUE)
+
+# Mostrar resultados
+print(tukey_result)
+
+# Cambiar el título del gráfico de Tukey a español
+plot(tukey_result, main = "Grupos y Rangos de Tratamientos")
+
+# Manipular los resultados para separar 'geno' y 'riego'
+grupos <- tukey_result$groups %>%
+  rownames_to_column("tratamientos") %>%
+  separate(tratamientos, into = c("geno", "riego"), sep = ":")
+
+# Mostrar la estructura del dataframe 'grupos'
+str(grupos)
+
+```
+```{r}
+# Comparacion de medias con: emmeans 
+## Modelo mixto de hi
+source('https://inkaverse.com/setup.r')
+library(emmeans)
+library(multcomp)
+library(multcompView)
+
+modelo <- lme4::lmer(wue ~ riego * geno + (1 | bloque), data = fb)
+
+anova(modelo)
+
+cm1 <- emmeans(modelo , ~  geno | riego) %>% 
+  cld(Letters = letters, reversed = T )
+cm1
+
+cm2 <- emmeans(modelo , ~  riego | geno) %>% 
+  cld(Letters = letters, reversed = T )
+cm2
+
+cm3 <- emmeans(modelo , ~  riego * geno)%>% 
+  cld(Letters = letters, reversed = T )
+cm3
+
+
+
+### Grafica 
+library(ggplot2)
+dtcm <- as.data.frame(cm1) %>% 
+  rename(sig = ".group")
+
+ggplot(dtcm, aes(x = geno, y = emmean, fill = riego)) +
+  geom_bar(stat = "identity", position = "dodge", color =
+             "black") +
+  geom_text(aes(label = sig, y = emmean),
+            position = position_dodge(width = 0.9),
+            vjust = 0) +
+  labs(x = "Genotipo", y = "HI", fill = "Riego") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  ggtitle("Gráfico de barras: HI por genotipo y riego")
+```
+```{r}
+# Cargar las librerías necesarias
+source('https://inkaverse.com/setup.r')
+library(emmeans)
+library(multcomp)
+library(multcompView)
+
+# Ajustar el modelo cambiando de lfa a tubdw
+modelo <- lme4::lmer(wue ~ riego * geno + (1 | bloque), data = fb)
+
+# Análisis de varianza del modelo
+anova(modelo)
+
+# Comparaciones de medias con emmeans
+cm1 <- emmeans(modelo, ~ geno | riego) %>% 
+  cld(Letters = letters, reversed = T)
+cm1
+
+cm2 <- emmeans(modelo, ~ riego | geno) %>% 
+  cld(Letters = letters, reversed = T)
+cm2
+
+cm3 <- emmeans(modelo, ~ riego * geno) %>% 
+  cld(Letters = letters, reversed = T)
+cm3
+
+### Gráfica
+library(ggplot2)
+dtcm <- as.data.frame(cm1) %>% 
+  rename(sig = ".group")
+
+# Crear el gráfico de barras para tubdw
+ggplot(dtcm, aes(x = geno, y = emmean, fill = riego)) +
+  geom_bar(stat = "identity", position = "dodge", color = "black") +
+  geom_text(aes(label = sig, y = emmean),
+            position = position_dodge(width = 0.9),
+            vjust = 0) +
+  labs(x = "Genotipo", y = "Peso Seco de Tubérculos (tubdw)", fill = "Riego") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  ggtitle("Peso Seco de Tubérculos (tubdw) por Genotipo y Riego")
+```
+```{r}
+# Cargar las librerías necesarias
+source('https://inkaverse.com/setup.r')
+library(emmeans)
+library(multcomp)
+library(multcompView)
+
+# Ajustar el modelo cambiando a wue
+modelo <- lme4::lmer(wue ~ riego * geno + (1 | bloque), data = fb)
+
+# Análisis de varianza del modelo
+anova(modelo)
+
+# Comparaciones de medias con emmeans
+cm1 <- emmeans(modelo, ~ geno | riego) %>% 
+  cld(Letters = letters, reversed = T)
+cm1
+
+cm2 <- emmeans(modelo, ~ riego | geno) %>% 
+  cld(Letters = letters, reversed = T)
+cm2
+
+cm3 <- emmeans(modelo, ~ riego * geno) %>% 
+  cld(Letters = letters, reversed = T)
+cm3
+
+### Gráfica
+library(ggplot2)
+dtcm <- as.data.frame(cm1) %>% 
+  rename(sig = ".group")
+
+# Crear el gráfico de barras para wue
+ggplot(dtcm, aes(x = geno, y = emmean, fill = riego)) +
+  geom_bar(stat = "identity", position = "dodge", color = "black") +
+  geom_text(aes(label = sig, y = emmean),
+            position = position_dodge(width = 0.9),
+            vjust = 0) +
+  labs(x = "Genotipo", y = "Eficiencia en el Uso del Agua (wue)", fill = "Riego") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  ggtitle("Eficiencia en el Uso del Agua (wue) por Genotipo y Riego")
+
+```
+
+```{r}
+library(googlesheets4)
+library(tidyverse)
+library(FactoMineR)
+library(factoextra)
+
+# Cargar los datos desde Google Sheets
+url <- "https://docs.google.com/spreadsheets/d/15r7ZwcZZHbEgltlF6gSFvCTFA-CFzVBWwg3mFlRyKPs/edit#gid=172957346"
+fb <- range_read(url, sheet = "fb")
+
+# Filtrar solo las variables cuantitativas para el PCA
+datos_pca <- fb %>%
+  select(where(is.numeric)) %>% # Seleccionar solo las columnas que son de tipo numérico
+  na.omit()  # Eliminar filas con valores faltantes
+
+# Realizar el Análisis de Componentes Principales
+pca_result <- PCA(datos_pca, graph = FALSE)
+
+# Visualizar la varianza explicada por cada componente principal
+fviz_eig(pca_result)
+
+# Visualizar el biplot para explorar las relaciones entre los genotipos y las variables
+fviz_pca_biplot(pca_result, repel = TRUE, label = "var")
+
+# Convertir la variable 'geno' a factor para colorear por genotipo
+fb$geno <- as.factor(fb$geno)
+
+# Visualizar los individuos (genotipos) proyectados en los dos primeros componentes principales
+fviz_pca_ind(pca_result,
+             geom.ind = "point", # Mostrar los genotipos como puntos
+             col.ind = fb$geno,   # Colorear por genotipo
+             palette = "jco",
+             addEllipses = TRUE, # Añadir elipses de agrupamiento por genotipo
+             legend.title = "Genotipo")
+
+
+```
+
+
+
+
+
+
+
+
+

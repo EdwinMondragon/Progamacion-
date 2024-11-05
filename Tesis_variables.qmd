@@ -124,7 +124,7 @@ El factor de tipo de riego tuvo dos tratamientos: riego normal y sequía control
 experimentales fueron cinco por tratamiento las que fueron distribuidas al azar (Fig. 2).
 </div>
 
-```{r, echo=FALSE, results='asis', out.width="90%"}
+```{r, echo=FALSE, results='asis', out.width="97%"}
 library(htmltools)
 knitr::include_graphics("C:/Users/altoque-2024/Desktop/123456789.jpeg")
 cat(HTML("<p style='text-align:center;'><strong>Figura 2:</strong> <em>Distribución espacial del experimento con el diseño de parcelas divididas dentro del invernadero</em></p>"))
@@ -159,7 +159,7 @@ cat(HTML("<p style='text-align:center;'><strong>Figura 2:</strong> <em>Distribuc
 
 **biomdw** : Biomasa total en peso seco. Representa la suma del peso seco de hojas, tallos, raíces y tubérculos.
 
-**hola** : Índice de cosecha . Es el cociente entre el peso seco de los tubérculos y la biomasa total. Indica la eficiencia con la cual la planta destina sus recursos a producir partes cosechables.
+**hi** : Índice de cosecha . Es el cociente entre el peso seco de los tubérculos y la biomasa total. Indica la eficiencia con la cual la planta destina sus recursos a producir partes cosechables.
 
 **ttrans** : Transpiración total . Es una medida del total de agua transpirada por la planta.
 
@@ -171,9 +171,9 @@ cat(HTML("<p style='text-align:center;'><strong>Figura 2:</strong> <em>Distribuc
 </div>
 <span style="color: orange;">Variables analizadas en esta presentación</span>
 <div style="text-align: justify;">
-En esta presentación analizaremos las variables (**ttrans**) y (**wue**):
+En esta presentación analizaremos las variables (**tubdw**) y (**wue**):
 
-**stemdw** : Peso seco del tallo. Similar a leafdw, mide el peso del tallo después de secarlo.
+**tubdw** : Peso seco del tallo. Similar a leafdw, mide el peso del tallo después de secarlo.
 
 **wue** : Eficiencia en el uso del agua . Es un índice que mide la cantidad de biomasa producida por unidad de agua consumida.
 
@@ -314,7 +314,7 @@ El gráfico permite observar cómo algunos genotipos, como G05 y G15, presentan 
 
 Este análisis comparativo facilita la identificación de los genotipos con mayor rendimiento y su respuesta a los distintos regímenes de riego, ayudando a los investigadores a seleccionar aquellos con mejores características para condiciones específicas.
 </div>
-```{r, echo=FALSE, results='asis', out.width="90%"}
+```{r, echo=FALSE, results='asis', out.width="97%"}
 library(htmltools)
 knitr::include_graphics("C:/Users/altoque-2024/Desktop/tubdw.jpeg")
 cat(HTML("<p style='text-align:center;'><strong>Figura 4:</strong> <em>Diagrama de cajas del efectto de geno y riego en tubdw</em></p>"))
@@ -324,7 +324,7 @@ cat(HTML("<p style='text-align:center;'><strong>Figura 4:</strong> <em>Diagrama 
 <div style="text-align: justify;">
 El gráfico (**Figura 5**) presenta la comparación de medias del peso seco de los tubérculos (tubdw) para distintos tratamientos de riego (irrigado y sequía) y genotipos (G15, G08, G07, etc.) de papa. Los grupos se identifican mediante letras, indicando que los tratamientos que comparten la misma letra no tienen diferencias significativas en su rendimiento, según la prueba de Tukey. Los resultados muestran que los genotipos G15 y G08 bajo condiciones de riego presentan las medias más altas de peso seco, destacando la influencia del riego sobre el rendimiento de estos genotipos. Este análisis permite identificar qué combinaciones de genotipo y tratamiento de riego son más productivas.
 </div>
-```{r, echo=FALSE, results='asis', out.width="90%"}
+```{r, echo=FALSE, results='asis', out.width="97%"}
 library(htmltools)
 knitr::include_graphics("C:/Users/altoque-2024/Desktop/grupos.jpeg")
 cat(HTML("<p style='text-align:center;'><strong>Figura 5:</strong> <em>Comparación de medias del efecto del riego y genotipo en el peso seco de los tubérculos de papa. Los grupos identificados con la misma letra no presentan diferencias significativas (prueba de Tukey, p < 0.05).</em></p>"))
@@ -336,7 +336,7 @@ El gráfico de barras (**Figura 6**) muestra el peso seco de los tubérculos (tu
 
 Las letras sobre las barras indican los grupos homogéneos identificados mediante la prueba de Tukey, lo que permite ver qué tratamientos no presentan diferencias significativas entre sí. Las barras en rojo (irrigado) tienden a mostrar valores mayores que las barras en azul (sequía), lo cual resalta el impacto positivo del riego en la producción de tubérculos. Los genotipos G08 y G15 bajo irrigado muestran los valores más altos de tubdw, lo que sugiere una alta respuesta de estos genotipos a la disponibilidad de agua.
 </div>
-```{r, echo=FALSE, results='asis', out.width="90%"}
+```{r, echo=FALSE, results='asis', out.width="97%"}
 library(htmltools)
 knitr::include_graphics("C:/Users/altoque-2024/Desktop/mixto.png")
 cat(HTML("<p style='text-align:center;'><strong>Figura 6:</strong> <em>Comparación de medias ajustadas del peso seco de tubérculos (tubdw) para distintos genotipos de papa bajo tratamientos de riego (irrigado y sequía). Las letras indican los grupos que no presentan diferencias significativas según la prueba de Tukey (p < 0.05).</em></p>"))
@@ -345,7 +345,7 @@ cat(HTML("<p style='text-align:center;'><strong>Figura 6:</strong> <em>Comparaci
 <div style="text-align: justify;">
 El diagrama de cajas muestra la Eficiencia en el Uso del Agua (wue) para distintos genotipos de papa bajo tratamientos de riego (irrigado y sequía). Se observa que, en la mayoría de los genotipos, los valores de wue son similares entre ambos tratamientos, lo que sugiere que la eficiencia en el uso del agua no se ve significativamente afectada por la disponibilidad de riego en la mayoría de los casos. Sin embargo, algunos genotipos como G06 bajo sequía presentan valores más altos, indicando una mayor capacidad de uso eficiente del agua bajo condiciones limitadas.
 </div>
-```{r, echo=FALSE, results='asis', out.width="90%"}
+```{r, echo=FALSE, results='asis', out.width="97%"}
 library(htmltools)
 knitr::include_graphics("C:/Users/altoque-2024/Desktop/wue.png")
 cat(HTML("<p style='text-align:center;'><strong>Figura 7:</strong> <em>Eficiencia en el Uso del Agua (wue) para diferentes genotipos de papa bajo tratamientos de riego (irrigado y sequía). Los resultados sugieren que algunos genotipos muestran mayor eficiencia bajo condiciones de sequía.</em></p>"))
@@ -356,7 +356,7 @@ La imagen (**Figura 8**) presenta los resultados de la prueba de Tukey aplicada 
 
 Las letras sobre cada punto indican los grupos homogéneos identificados por la prueba de Tukey, lo cual permite observar qué combinaciones no presentan diferencias significativas entre sí. El genotipo G05 bajo sequía destaca con el valor más alto de wue, ubicado en un grupo distinto al de los demás, lo cual sugiere una mayor eficiencia en el uso del agua bajo condiciones de restricción hídrica. Los tratamientos restantes presentan valores más homogéneos, con la mayoría perteneciendo a grupos similares.
 </div>
-```{r, echo=FALSE, results='asis', out.width="90%"}
+```{r, echo=FALSE, results='asis', out.width="150%"}
 library(htmltools)
 knitr::include_graphics("C:/Users/altoque-2024/Desktop/wue1.jpeg")
 cat(HTML("<p style='text-align:center;'><strong>Figura 8:</strong> <em>Eficiencia en el Uso del Agua (wue) para diferentes genotipos de papa bajo tratamientos de riego (irrigado y sequía). Los resultados sugieren que algunos genotipos muestran mayor eficiencia bajo condiciones de sequía.</em></p>"))
@@ -367,10 +367,23 @@ El gráfico de barras (**Figura 9**) presenta la eficiencia en el uso del agua (
 
 En la mayoría de los genotipos, se observa una tendencia similar en los valores dewue entre los tratamientos de irrigadoy sequía, lo que indica que muchos de los genotipos mantienen una eficiencia en el uso del agua relativamente constante. En algunos casos, como en los genotipos G03 y G10 , el riego sequíaparece tener un efecto positivo sobre la eficiencia, ya que presenta valores más altos de wueen comparación con irrigado.
 </div>
-```{r, echo=FALSE, results='asis', out.width="90%"}
+```{r, echo=FALSE, results='asis', out.width="97%"}
 library(htmltools)
 knitr::include_graphics("C:/Users/altoque-2024/Desktop/wue2.jpeg")
 cat(HTML("<p style='text-align:center;'><strong>Figura 9:</strong> <em>Comparación de la eficiencia en el uso del agua ( wue) para diferentes genotipos de papa bajo tratamientos de riego ( irrigadoy sequía). Las letras indican los grupos homogéneos según la prueba de Tukey (p < 0.05), mostrando qué combinaciones no presentan diferencias significativas.</em></p>"))
+```
+<span style="color: orange;">Análisis de Componentes Principales (PCA) </span>
+<div style="text-align: justify;">
+El análisis de componentes principales (PCA) (**Figura 10**) permite reducir la complejidad de los datos a dos dimensiones principales que capturan el 100% de la variabilidad en las variables tubdw (biomasa de tubérculo seco) y wue (eficiencia de uso del agua). La primera dimensión está principalmente influenciada por tubdw, mientras que la segunda dimensión está más relacionada con wue. Esto significa que tubdw y wue representan diferentes aspectos de los datos y ayudan a distinguir entre las observaciones.
+
+En el gráfico de individuos, las observaciones que están cercanas entre sí tienen perfiles similares en términos de tubdw y wue, mientras que aquellas que están alejadas son más diferentes. El gráfico de variables muestra que tubdw y wue están orientadas en direcciones distintas, indicando que estas variables capturan información complementaria.
+
+En conjunto, este PCA facilita la identificación de patrones y agrupamientos en los datos, lo cual es útil para analizar las características de los individuos en función de sus valores en tubdw y wue, posiblemente revelando cómo los tratamientos de riego y los diferentes genotipos influyen en estas variables.
+</div>
+```{r, echo=FALSE, results='asis', out.width="200%"}
+library(htmltools)
+knitr::include_graphics("C:/Users/altoque-2024/Desktop/PCA.jpeg")
+cat(HTML("<p style='text-align:center;'><strong>Figura 10:</strong> <em>Análisis de componentes principales (PCA) de características agronómicas de plantas de papa bajo diferentes tratamientos de riego.</em></p>"))
 ```
 # <span style="color: orange;">Resultados y Discusión para wue y tubdw </span>
 <span style="color: orange;">Resultados para tubdw (Peso Seco de los Tubérculos) </span>
