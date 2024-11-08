@@ -1,3 +1,22 @@
+---
+title: "EFICIENCIA DE USO DE AGUA EN QUINCE GENOTIPOS DE PAPA (*Solanum tuberosum* L.) BAJO CONDICIONES DE ESTRÉS HÍDRICO POR SEQUÍA"
+author: "FLAVIO LOZANO ISLA"
+format:
+  html:
+    toc: true
+    toc-location: left
+    number-sections: true
+    embed-resources: true
+    output-file: index
+header-includes:
+  - |
+    <style>
+      h1.title {
+        text-align: justify;
+        color: orange;
+      }
+    </style>
+---
 ```{r, echo=FALSE, results='asis'}
 library(googlesheets4)
 library(tidyverse)
@@ -5,19 +24,28 @@ url <- "https://docs.google.com/spreadsheets/d/15r7ZwcZZHbEgltlF6gSFvCTFA-CFzVBW
 fb <- range_read(url, sheet = "fb")
 ```
 
+<span style="color: orange;">Diseño y análisis estadístico </span>
+<div style="text-align: justify;">
+El diseño experimental utilizado fue de Parcelas Divididas, lo cual es adecuado para la
+características de la evaluación (Montgomery, 1999). La unidad experimental fue de una planta
+y/o maceta. Los factores por analizar fueron dos: los genotipos de papa y los tipos de riego. El
+factor genotipos constó de 13 clones avanzado y 2 variedades de papa (UNICA y Achirana) .
+El factor de tipo de riego tuvo dos tratamientos: riego normal y sequía controlada. Las unidades
+experimentales fueron cinco por tratamiento las que fueron distribuidas al azar (Fig. 2).
+</div>
 ```{r, echo=FALSE, results='asis'}
-modelo <- lm(formula = tubdw  ~ block + geno + riego * geno, data = fb)
+modelo <- lm(formula = rwc_84  ~ block + geno + riego * geno, data = fb)
 anova(modelo)
 ```
 ```{r}
 library(ggplot2)
 
 # Crear un diagrama de cajas
-ggplot(data = fb, aes(x = geno, y = wue, fill = riego)) +
+ggplot(data = fb, aes(x = geno, y = rwc_84, fill = riego)) +
   geom_boxplot() +
-  labs(title = "Diagrama de Cajas de wue por geno y riego",
+  labs(title = "Diagrama de Cajas de rwc_84 por geno y riego",
        x = "Genotipo (geno)",
-       y = "Valor de wue") +
+       y = "Valor de rwc_84") +
   theme_minimal()
 ```
 
@@ -117,7 +145,7 @@ library(cowplot)
 # Selecciona solo las variables necesarias y calcula el promedio
 mv <- fb %>%
     group_by(riego, geno) %>%
-    summarise(across(c(tubdw, wue), ~ mean(., na.rm = TRUE))) %>%
+    summarise(across(c(rwc_84, wue), ~ mean(., na.rm = TRUE))) %>%
     PCA(scale.unit = TRUE, quali.sup = c(1, 2), graph = FALSE)  # Adaptamos quali.sup a las posiciones de 'riego' y 'geno'
 
 # Graficar el análisis de componentes principales

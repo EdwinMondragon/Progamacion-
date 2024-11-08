@@ -1,6 +1,6 @@
 ---
 title: "Como usar quarto"
-author: "Edwin Mondragon Herrera"
+author: "Edwin Mondragon"
 format:
   html:
     toc: true
@@ -9,112 +9,180 @@ format:
     embed-resources: true
     output-file: index 
 ---
-
 # Quarto
 
 Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
 
 ## Running Code
 
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+When you click the *Render* button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
 
 ```{r}
 1 + 1
 ```
-
-You can add options to executable code like this
+You can add options to executable code like this 
 
 ```{r}
 #| echo: false
 2 * 2
 ```
 
-The `echo: false` option disables the printing of code (only output is displayed).
+The echo: false option disables the printing of code (only output is displayed).
+
+The echo: false option disables the printing of code (only output is displayed).
 
 # Como usar cuarto?
 
-## Fuentes
-
--   Negrita: **esta es una fuente negrita**
--   Cursiva: *Solanum tuberosum*
+## fuentes
+- Negrita: *esta es una fuente negrita*
+- Cursia: Solamun Tuberosum
 
 ## Formulas matemàticas
 
-Este es el area de una circunferencia $Area_{c}=pi\cdot r^2$
+Este es el area de una circunferencia $Area_{circunferencia}=pi\cdot r^2$
 
 Esta es una formula cualquiera $$\frac{\left(2x-1\right)^2-1}{4}=k$$
 
-# Mi primera página web.
 
-1.  Tener mi proyecto
-2.  Conectar mi proyecto a GitHub
-3.  Tener un archivo en formato html llamado index.html
-4.  Activar GitHub pages
 
-# Modelo lineal
 
-## Importar data
+# Mi primera pagina web. 
 
+1. Tener mi proyecto
+1. conectar mi poryecto a github
+1. Tener un archivo en formato html llamado index.hetml
+1. Activar Gi thub pages 
+
+# Modelos lineales mixtos
+
+## Importar datos
 ```{r}
-# Cargar librerías
-library(googlesheets4)
-library(tidyverse)
+source('https://inkaverse.com/setup.r')
 
-# URL de la hoja de Google Sheets
-url <- "https://docs.google.com/spreadsheets/d/15r7ZwcZZHbEgltlF6gSFvCTFA-CFzVBWwg3mFlRyKPs/edit#gid=172957346"
+url <- "https://docs.google.com/spreadsheets/d/15r7ZwcZZHbEgltlF6gSFvCTFA-CFzVBWwg3mFlRyKPs/edit?gid=172957346#gid=172957346"
 
-# Leer los datos de la pestaña "fb"
-fb <- range_read(url, sheet = "fb")
+gs <- url %>% 
+  as_sheets_id()
+
+fb <- gs %>% 
+  range_read("fb")
+str(fb)
 ```
 
+## Modelo lineal lfa
 ```{r}
-# Modelo lineal
-modelo <- lm(formula = lfa ~ block + geno + riego * geno, data = fb)
+modelo <- aov(formula = lfa ~  bloque + riego + geno + riego*geno
+          , data = fb)
 
-# Análisis de varianza del modelo
 anova(modelo)
+
+plot(modelo)
+```
+
+### boxplot
+```{r}
+ggplot(fb, aes(x = geno, y = lfa, colour = riego)) +
+  geom_boxplot(outlier.colour = "red", outlier.shape = 16, outlier.size = 2) +
+  labs(title = "Boxplot con interacción de niveles de riego y genotipo",
+       x = "Interacción Riego y Genotipo",
+       y = "Area Folicar (cm^2)")
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))  # Inclinar etiquetas del eje X
+```
+
+## Modelo lineal de hi
+```{r}
+modelo <- aov(formula = hi ~  bloque + riego + geno + riego*geno
+          , data = fb)
+
+anova(modelo)
+
+plot(modelo)
+```
+
+### boxplot 
+```{r}
+ggplot(fb, aes(x = geno, y = hi, colour = riego)) +
+  geom_boxplot(outlier.colour = "red", outlier.shape = 16, outlier.size = 2) +
+  labs(title = "Boxplot con interacción de niveles de riego y genotipo",
+       x = "Interacción Riego y Genotipo",
+       y = "Indice de Cosecha  (cm^2)")
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))  # Inclinar etiquetas del eje X
+```
+## Modelo lineal mixto: lfa
+```{r}
+library(lme4)
+
+library(lmerTest)
+
+model <- lme4::lmer(formula = lfa ~ riego * geno + (1|bloque), data = fb)
+anova(model)
+
+plot(modelo)
+
+ol <- boxplot(lfa ~ riego * geno, fb)
+
+ol
 ```
 
 ```{r}
-# Cargar librerías
-library(ggplot2)
+library(inti)
 
-# Crear un diagrama de cajas
-ggplot(data = fb, aes(x = geno, y = lfa, fill = riego)) +
-  geom_boxplot() +
-  labs(title = "Diagrama de Cajas de lfa por geno y riego",
-       x = "Genotipo (geno)",
-       y = "Valor de lfa") +
-  theme_minimal()
-
-
+model <- remove_outliers(data = fb
+                             , formula = lfa ~ riego * geno + (1|bloque)
+                         , plot_diag = T)
+model
 ```
 
-# Agricolae: comparación de medias
+# Comparacion de medias 
+```{r}
+modelo <- aov(formula = lfa ~  bloque + riego + geno + riego*geno
+          , data = fb)
 
+anova(modelo)
+
+plot(modelo)
+```
+
+
+
+## Comparacion de medias con Tukey con Agricolae 
+### Comparacion de medias de tukey (riego )
 ```{r}
 library(agricolae)
+tukey_riego <- HSD.test(modelo, "riego", group = TRUE)
+print(tukey_riego)
+plot(tukey_riego)
+```
 
-# Análisis de varianza del modelo
-anova(modelo)
 
-# Realizar la prueba de Tukey
-tukey_result <- HSD.test(modelo, tr = c("geno", "riego"), group = TRUE)
 
-# Mostrar resultados
-print(tukey_result)
-plot(tukey_result)
+### Comparacion de medias con tukey (geno )
+```{r}
+tukey_geno <- HSD.test(modelo, "geno", group = TRUE)
+print(tukey_geno)
+plot(tukey_geno)
+```
 
-# Manipular los resultados para separar 'geno' y 'riego'
-grupos <- tukey_result$groups %>%
-  rownames_to_column("tratamientos") %>%
-  separate(tratamientos, into = c("geno", "riego"), sep = ":")
+### Comparacion de medias de tukey (Interraccion riego y geno)
+```{r}
+tukey_interaccion <- HSD.test(modelo, c("riego","geno"), group = TRUE)
+print(tukey_interaccion)
+plot(tukey_interaccion)
+
+str(tukey_interaccion)
+
+grupos <- tukey_interaccion$groups %>% 
+  rownames_to_column("Tratamientos") %>% 
+  separate("Tratamientos", into = c("riego","geno"))
 
 str(grupos)
-
 ```
 
 ```{r}
+library(ggplot2)
+
 ggplot(grupos, aes(x = geno, y = lfa, fill = riego)) +
   geom_bar(stat = "identity", position = position_dodge()) +
   labs(title = "Efecto de Geno y Riego en LFA",
@@ -123,29 +191,28 @@ ggplot(grupos, aes(x = geno, y = lfa, fill = riego)) +
   theme_minimal() +
   scale_fill_discrete(name = "Riego") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
 ```
 
+### Letras dentro de la grafica 
 ```{r}
 ggplot(grupos, aes(x = geno, y = lfa, fill = riego)) +
   geom_bar(stat = "identity", position = position_dodge()) +
-  geom_text(aes(label = groups),  # Mostrar 'groups' como etiqueta
+  geom_text(aes(label = groups), 
             position = position_dodge(width = 0.9), 
-            vjust = -0.3) +  # Ajusta la posición vertical de las etiquetas
+            vjust = -0.3, 
+            size = 3) +  
   labs(title = "Efecto de Geno y Riego en LFA",
        x = "Genotipo",
        y = "LFA") +
   theme_minimal() +
   scale_fill_discrete(name = "Riego") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
-
-
 ```
 
-# emmeans: comparación de medias
-
-```{r}
 # Comparacion de medias con: emmeans 
 ## Modelo mixto de hi
+```{r}
 source('https://inkaverse.com/setup.r')
 library(emmeans)
 library(multcomp)
@@ -166,10 +233,9 @@ cm2
 cm3 <- emmeans(modelo , ~  riego * geno)%>% 
   cld(Letters = letters, reversed = T )
 cm3
-
-
-
+```
 ### Grafica 
+```{r}
 library(ggplot2)
 dtcm <- as.data.frame(cm1) %>% 
   rename(sig = ".group")
@@ -184,5 +250,95 @@ ggplot(dtcm, aes(x = geno, y = emmean, fill = riego)) +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
   ggtitle("Gráfico de barras: HI por genotipo y riego")
-
 ```
+###Grafica 2
+```{r}
+library(ggplot2)
+library(emmeans)
+modelo <- lm(lfa ~ bloque + riego + geno + riego * geno, data = fb)
+cm1 <- emmeans(modelo, ~ geno | riego)
+cm1_df <- as.data.frame(cm1)
+ggplot(cm1_df, aes(x = geno, y = emmean, color = riego, group = riego)) +
+  geom_line() +
+  geom_point(size = 3) +  
+  geom_text(aes(label = round(emmean, 2)),  
+            vjust = -0.5, size = 3.5) +  
+  labs(x = "Genotipo", y = "Media marginal ajustada", color = "Riego") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  ggtitle("Medias marginales ajustadas por genotipo y riego")
+```
+
+
+# Analisis multivariado 
+
+## Corelacion 
+```{r}
+variables_cuantitativas <- fb[, c("lfa", "hi", "leafdw", "wue")]
+
+matriz_correlacion <- cor(variables_cuantitativas, method = "pearson")
+
+print(matriz_correlacion)
+
+library(corrplot)
+corrplot(matriz_correlacion, method = "circle", type = "upper", 
+         tl.col = "black", tl.srt = 45, 
+         title = "Matriz de Correlación", mar = c(0, 0, 1, 0))
+```
+```{r}
+library(PerformanceAnalytics)
+my_data <- fb[, c("lfa", "hi", "leafdw", "wue", "op_84")]
+chart.Correlation(my_data, histogram=TRUE, pch=19)
+```
+```{r}
+library(tidyverse)
+library(psych)
+fb %>% 
+  select_if(is.numeric) %>% 
+ dplyr::select(!c("block")) %>% 
+pairs.panels(x = .
+      , hist.col="blue"
+      , pch = 21
+      , stars = TRUE 
+      , scale = FALSE 
+      , lm= TRUE
+      )
+```
+## Analisis  de PCA 
+```{r}
+variables_cuantitativas <- fb[sapply(fb, is.numeric)]
+
+variables_cuantitativas_estandarizadas <- scale(variables_cuantitativas)
+
+pca_result <- prcomp(variables_cuantitativas_estandarizadas, center = TRUE, scale. = TRUE)
+summary(pca_result)
+screeplot(pca_result, type = "lines", main = "Scree Plot")
+library(ggplot2)
+biplot(pca_result, main = "Biplot del PCA", cex = 0.7)
+library(ggfortify)
+autoplot(pca_result, data = fb, colour = 'black', loadings = TRUE, loadings.label = TRUE, 
+         loadings.label.size = 3, main = "Gráfico de Componentes Principales")
+```
+
+### PCA DOS EN UNO
+```{r}
+library(FactoMineR)
+library(cowplot)
+mv <- fb %>%
+  group_by(riego, geno) %>%
+  summarise(across(where(is.numeric), ~ mean(., na.rm = TRUE))) %>%
+  PCA(scale.unit = T, quali.sup = c(1:4), graph = F)
+
+p1 <- plot(mv,
+           choix="ind",
+           habillage=1,
+           label = "ind")
+
+p2 <- plot(mv,
+           choix="var")
+
+list(p1, p2) %>%
+  plot_grid(plotlist = ., nrow = 1)
+```
+
+

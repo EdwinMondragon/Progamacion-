@@ -416,4 +416,8 @@ En conclusión, el presente estudio demuestra que la disponibilidad de agua tien
 # <span style="color: orange;">Referencia</span>
 <div style="text-align: justify;">
 Lozano Isla, F. (2015). Eficiencia de uso de agua en quince genotipos de Papa (Solanum tuberosum L.) bajo condiciones de estrés Hídrico por sequía.
+
+OpenAI. (2024). *ChatGPT* (versión GPT-4). https://chat.openai.com/
+
+R Core Team. (2024). *R: A language and environment for statistical computing*. R Foundation for Statistical Computing. https://www.R-project.org/
 <div>
