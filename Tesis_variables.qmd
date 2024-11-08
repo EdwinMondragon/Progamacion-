@@ -1,6 +1,6 @@
 ---
 title: "EFICIENCIA DE USO DE AGUA EN QUINCE GENOTIPOS DE PAPA (*Solanum tuberosum* L.) BAJO CONDICIONES DE ESTRÉS HÍDRICO POR SEQUÍA"
-author: "FLAVIO LOZANO ISLA"
+author: "Edwin Mondragon-Jhon Lopez-Gilberto Reyna-Griselida Rojas-Julio Machacuay-Jheyner Villegas-Emerson Santos"
 format:
   html:
     toc: true
